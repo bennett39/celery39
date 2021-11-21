@@ -1,0 +1,16 @@
+<html>
+    <head></head>
+    <body>
+        <a href="{% url 'fibonacci_list' %}">See results</a>
+
+        <hr>
+
+        <form method="post">
+            {% csrf_token %}
+            <label for="fib_number">
+            <input type="number" name="fib_number" id="fib_number">
+            <input type="submit" value="Submit">
+            <input type="reset">
+        </form>
+    </body>
+</html>

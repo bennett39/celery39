@@ -1,0 +1,25 @@
+<html>
+    <head></head>
+    <body>
+        <a href="{% url 'fibonacci_start' %}">Start a new calculation</a>
+
+        <hr>
+
+        <ul>
+            {% for calculation in calculations %}
+            <li>{{ calculation.equation }} - Started {{ calculation.created_at }}
+                <ul>
+                    <li>Status: {{ calculation.status }}</li>
+                    <li>Input: {{ calculation.input }}</li>
+                    <li>Output:
+                        {% if calculation.output %}
+                            {{ calculation.output }}
+                        {% else %}
+                            Calculating...
+                        {% endif %}
+                    </li>
+                </ul>
+            </li>
+            {% endfor %}
+    </body>
+</html>
